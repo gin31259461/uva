@@ -1,14 +1,20 @@
 #include <iostream>
-<<<<<<< HEAD
 
 int main()
 {
-=======
-#include <vector>
+  int dp[77];  
+  dp[0] = 1;
+  dp[1] = 1;
+  dp[2] = 2;
 
-int main()
-{
+  for(int i = 3; i <= 76; i++)
+    dp[i] = dp[i-2] + dp[i-3];
 
->>>>>>> origin/master
+  dp[0] = 0;
+  int n;
+
+  while(std::cin >> n && n != EOF)
+    std::cout << dp[n] << std::endl;
+
   return 0;
 }
